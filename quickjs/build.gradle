@@ -8,12 +8,13 @@ android {
 
     defaultConfig {
         minSdkVersion 16
+        //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         externalNativeBuild {
             cmake {
-                abiFilters 'armeabi-v7a'
+                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86'
             }
         }
     }
@@ -21,7 +22,7 @@ android {
     buildTypes {
         all {
             ndk {
-                abiFilters 'armeabi-v7a'
+                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86'
             }
         }
         release {
